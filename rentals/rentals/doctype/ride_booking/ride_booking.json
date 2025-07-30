@@ -1,0 +1,99 @@
+{
+  "doctype": "DocType",
+  "name": "Ride Booking",
+  "module": "Rentals",
+  "autoname": "field:booking_id",
+  "fields": [
+    {
+      "fieldname": "booking_id",
+      "label": "Booking ID",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "default": "New Booking",
+      "read_only": 1
+    },
+    {
+      "fieldname": "customer_name",
+      "label": "Customer Name",
+      "fieldtype": "Data",
+      "reqd": 1
+    },
+    {
+      "fieldname": "customer_phone",
+      "label": "Customer Phone",
+      "fieldtype": "Data",
+      "reqd": 1
+    },
+    {
+      "fieldname": "pickup_location",
+      "label": "Pickup Location",
+      "fieldtype": "Data",
+      "reqd": 1
+    },
+    {
+      "fieldname": "dropoff_location",
+      "label": "Dropoff Location",
+      "fieldtype": "Data",
+      "reqd": 1
+    },
+    {
+      "fieldname": "pickup_time",
+      "label": "Pickup Time",
+      "fieldtype": "Datetime",
+      "reqd": 1
+    },
+    {
+      "fieldname": "vehicle",
+      "label": "Vehicle",
+      "fieldtype": "Link",
+      "options": "Vehicle",
+      "reqd": 1
+    },
+    {
+      "fieldname": "driver",
+      "label": "Driver",
+      "fieldtype": "Link",
+      "options": "Driver",
+      "reqd": 1
+    },
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Select",
+      "options": "\nPending\nAccepted\nIn Progress\nCompleted\nCancelled",
+      "default": "Pending"
+    },
+    {
+      "fieldname": "fare",
+      "label": "Fare",
+      "fieldtype": "Currency",
+      "reqd": 0
+    },
+    {
+      "fieldname": "section_break",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "notes",
+      "label": "Notes",
+      "fieldtype": "Small Text"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Driver",
+      "read": 1,
+      "write": 1
+    }
+  ],
+  "is_submittable": 0,
+  "track_changes": 1,
+  "track_views": 1
+}

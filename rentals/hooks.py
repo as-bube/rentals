@@ -138,10 +138,8 @@ app_license = "mit"
 # Hook on document methods and events
 
 # doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
+# 	"ToDo": {
+# 		"before_insert": "rentals.api.throw_error",
 # 	}
 # }
 
@@ -165,6 +163,15 @@ app_license = "mit"
 # 		"rentals.tasks.monthly"
 # 	],
 # }
+
+scheduler_events = {
+	
+	"Cron": {
+		"30 15 * * 3":[
+            "rentals.api.send_payment_reminders"
+        ],
+    },
+}
 
 # Testing
 # -------
